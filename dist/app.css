@@ -11,7 +11,7 @@ body {
 
 .container {
   width: 90%;
-  max-width: 848px;
+  max-width: 1008px;
   margin: 0 auto;
 }
 
@@ -54,9 +54,9 @@ main .container .album-container {
 main .container .album-container .album-card {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  width: 200px;
+  width: 240px;
   background-color: black;
   color: white;
   padding: 8px;
@@ -69,6 +69,7 @@ main .container .album-container .album-card img {
 
 main .container .album-container .album-card h2 {
   text-transform: capitalize;
+  text-align: center;
 }
 
 main .container .album-container .album-card p.author {

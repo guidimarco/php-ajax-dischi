@@ -22,10 +22,10 @@
                 <div class="album-container">
                     <?php foreach ($dischi as $album) { ?>
                         <div class="album-card">
-                            <img src="https://www.onstageweb.com/wp-content/uploads/2018/09/bon-jovi-new-jersey.jpg" alt="">
-                            <h2>Title</h2>
-                            <p class="author">Author</p>
-                            <p>years</p>
+                            <img src="<?php echo $album["poster"] ?>" alt="<?php echo $album["title"] ?>">
+                            <h2><?php echo $album["title"] ?></h2>
+                            <p class="author"><?php echo $album["author"] ?></p>
+                            <p><?php echo $album["year"] ?></p>
                         </div>
                     <?php } ?>
 
