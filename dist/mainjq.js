@@ -56,19 +56,37 @@ $(document).ready(function() {
     $.ajax({
         url: "../jquery/dischi.php",
         method: "GET",
+        data: {
+            genre: "all",
+        },
         success: function(dischi) {
             // console.log(dischi);
             print_album_card(dischi); // print all card
             all_genre = get_genre(dischi); // get all genre
-            console.log(all_genre);
+            // console.log(all_genre);
             print_genre_option(all_genre); // print all genre
         },
         error: function() {
             console.log("errore");
         }
-    })
+    });
 
+    // change on select-value
     $("#select-genre").on("change", function() {
         console.log(this.value);
+        // ajax call -- after select-value change
+        $.ajax({
+            url: "../jquery/prova.php",
+            method: "GET",
+            data: {
+                genre: this.value,
+            },
+            success: function(dischi) {
+                console.log("ciao");
+            },
+            error: function() {
+                console.log("errore");
+            }
+        });
     });
 });
