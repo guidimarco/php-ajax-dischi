@@ -32,5 +32,7 @@ $(document).ready(function() {
         }
     })
 
-    
+    $("#select-genre").on("change", function() {
+        console.log(this.value);
+    });
 });
