@@ -21,8 +21,6 @@
 
                 <select id="select-genre" name="genre">
                     <option value="all">all</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
                 </select>
             </div>
         </header>
@@ -42,6 +40,10 @@
                 <p class="author">{{ author }}</p>
                 <p>{{ year }}</p>
             </div>
+        </script>
+        <!-- select-genre template -->
+        <script id="genre-template" type="text/x-handlebars-template">
+            <option value="{{ genre }}">{{ genre }}</option>
         </script>
 
         <!-- js -->

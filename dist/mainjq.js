@@ -4,6 +4,9 @@ let all_genre = []; // array of all-genre
 // handlebar album card
 const album_card_html = document.getElementById("album-card-template").innerHTML;
 const album_card_template = Handlebars.compile(album_card_html);
+// handlebar genre option
+const genre_html = document.getElementById("genre-template").innerHTML;
+const genre_template = Handlebars.compile(genre_html);
 
 function print_album_card(album_array) {
     // get all album-info
@@ -19,6 +22,19 @@ function print_album_card(album_array) {
 
         // append in container
         $(".album-container").append(final_album_html);
+    });
+}; // print in the template
+function print_genre_option(genre_array) {
+    // get all album-info
+    genre_array.forEach((genre_value) => {
+        // obj-info
+        var genre_info = {
+            genre: genre_value,
+        };
+        var final_genre_html = genre_template(genre_info);
+
+        // append in select
+        $("#select-genre").append(final_genre_html);
     });
 }; // print in the template
 function get_genre(album_array) {
@@ -45,6 +61,7 @@ $(document).ready(function() {
             print_album_card(dischi); // print all card
             all_genre = get_genre(dischi); // get all genre
             console.log(all_genre);
+            print_genre_option(all_genre); // print all genre
         },
         error: function() {
             console.log("errore");
