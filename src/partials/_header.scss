@@ -1,0 +1,15 @@
+header {
+    $header_padding: $spacing;
+
+    height: $header_h;
+    background-color: $bg_primary;
+    padding: $header_padding 0;
+
+    .container {
+        .logo {
+            img {
+                max-height: calc(#{$header_h} - #{$header_padding} * 2);
+            }
+        }
+    }
+} // fine header
