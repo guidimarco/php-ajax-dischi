@@ -71,7 +71,29 @@
             'year' => '1987'
         ]
     ];
+    $genre = $_GET["genre"];
+    $request_album = [];
+    // generate disc da inviare
+
+    $request_album = request_album($dischi, $genre);
+
+    function is_genre($album, $this_genre) {
+        return $album["genre"] == $this_genre;
+    }; // return true if album has current genre
+    function request_album($array_dischi, $this_genre) {
+        $new_array = [];
+        if ($this_genre == "all") {
+            $new_array = $array_dischi;
+        } else {
+            foreach ($array_dischi as $album) {
+                if (is_genre($album, $this_genre)) {
+                    array_push($new_array, $album);
+                }
+            }
+        }
+        return $new_array;
+    }; // push request album (from genre)
 
     header('Content-Type: application/json');
-    echo json_encode($dischi);
+    echo json_encode($request_album);
 ?>

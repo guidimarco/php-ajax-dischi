@@ -73,16 +73,16 @@ $(document).ready(function() {
 
     // change on select-value
     $("#select-genre").on("change", function() {
-        console.log(this.value);
         // ajax call -- after select-value change
         $.ajax({
-            url: "../jquery/prova.php",
+            url: "../jquery/dischi.php",
             method: "GET",
             data: {
                 genre: this.value,
             },
             success: function(dischi) {
-                console.log("ciao");
+                $(".album-container").empty(); // empty the page
+                print_album_card(dischi); // print all card
             },
             error: function() {
                 console.log("errore");
