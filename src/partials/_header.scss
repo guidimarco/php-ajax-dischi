@@ -6,10 +6,16 @@ header {
     padding: $header_padding 0;
 
     .container {
+        @include flex(row, space-between, center);
+        
         .logo {
             img {
                 max-height: calc(#{$header_h} - #{$header_padding} * 2);
             }
+        }
+
+        select {
+
         }
     }
 } // fine header

@@ -34,6 +34,13 @@ header {
   padding: 8px 0;
 }
 
+header .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
 header .container .logo img {
   max-height: calc(60px - 8px * 2);
 }
