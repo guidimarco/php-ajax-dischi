@@ -1,6 +1,7 @@
 main {
     height: calc(100vh - #{$header_h});
     background-color: grey;
+    overflow-y: auto;
     .container {
         .album-container {
             display: flex; flex-wrap: wrap;
@@ -10,10 +11,21 @@ main {
                 @include flex(column, center, center);
                 width: 200px;
                 background-color: $bg_primary; color: $col_primary;
-                padding: $spacing; margin: $spacing;
+                padding: $spacing; margin: (2 * $spacing) $spacing;
 
                 img {
                     width: 100%;
+                }
+                h2 {
+                    text-transform: capitalize;
+                }
+                p {
+
+                    &.author {
+                        color: $col_primary_alt;
+                        font-weight: bold;
+                        text-transform: capitalize;
+                    }
                 }
             }
         }

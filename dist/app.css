@@ -11,7 +11,7 @@ body {
 
 .container {
   width: 90%;
-  max-width: 1170px;
+  max-width: 848px;
   margin: 0 auto;
 }
 
@@ -41,6 +41,7 @@ header .container .logo img {
 main {
   height: calc(100vh - 60px);
   background-color: grey;
+  overflow-y: auto;
 }
 
 main .container .album-container {
@@ -59,10 +60,20 @@ main .container .album-container .album-card {
   background-color: black;
   color: white;
   padding: 8px;
-  margin: 8px;
+  margin: 16px 8px;
 }
 
 main .container .album-container .album-card img {
   width: 100%;
+}
+
+main .container .album-container .album-card h2 {
+  text-transform: capitalize;
+}
+
+main .container .album-container .album-card p.author {
+  color: grey;
+  font-weight: bold;
+  text-transform: capitalize;
 }
 

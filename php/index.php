@@ -20,12 +20,15 @@
         <main>
             <div class="container">
                 <div class="album-container">
-                    <div class="album-card">
-                        <img src="https://www.onstageweb.com/wp-content/uploads/2018/09/bon-jovi-new-jersey.jpg" alt="">
-                        <h2>Title</h2>
-                        <p>Author</p>
-                        <p>years</p>
-                    </div>
+                    <?php foreach ($dischi as $album) { ?>
+                        <div class="album-card">
+                            <img src="https://www.onstageweb.com/wp-content/uploads/2018/09/bon-jovi-new-jersey.jpg" alt="">
+                            <h2>Title</h2>
+                            <p class="author">Author</p>
+                            <p>years</p>
+                        </div>
+                    <?php } ?>
+
                 </div>
             </div>
         </main>
