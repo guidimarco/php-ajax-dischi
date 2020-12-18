@@ -70,7 +70,8 @@
             'genre' => 'Pop',
             'year' => '1987'
         ]
-    ];
+    ]; // all-album
+    $genres = get_genres($dischi); // all-genres
 
     // if ajax-request not empty && !== "all"
     if (!empty($_GET) && !empty($_GET["genre"] !== "all")) {
@@ -106,4 +107,15 @@
         }
         return $new_array;
     }; // push request album (from genre)
+    function get_genres($array_dischi) {
+        $all_genres = [];
+
+        foreach ($array_dischi as $disco) {
+            if (!in_array($disco["genre"], $all_genres)) {
+                $all_genres[] = $disco["genre"];
+            }
+        }
+
+        return $all_genres;
+    }; // return array of genres (str)
 ?>

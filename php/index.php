@@ -1,5 +1,4 @@
 <?php include "../dischi.php"; ?>
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
@@ -15,6 +14,13 @@
                 <div class="logo">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/1024px-Spotify_logo_without_text.svg.png" alt="brand logo spotify">
                 </div>
+
+                <select id="select-genre" name="genre">
+                    <option value="all">all</option>
+                    <?php foreach ($genres as $genre) { ?>
+                        <option value="<?php echo $genre; ?>"><?php echo $genre; ?></option>
+                    <?php } ?>
+                </select>
             </div>
         </header>
         <main>
