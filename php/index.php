@@ -1,4 +1,4 @@
-<?php include "dischi.php"; ?>
+<?php include "../dischi.php"; ?>
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -20,7 +20,7 @@
         <main>
             <div class="container">
                 <div class="album-container">
-                    <?php foreach ($dischi as $album) { ?>
+                    <?php foreach ($request_album as $album) { ?>
                         <div class="album-card">
                             <img src="<?php echo $album["poster"] ?>" alt="<?php echo $album["title"] ?>">
                             <h2><?php echo $album["title"] ?></h2>
@@ -28,7 +28,6 @@
                             <p><?php echo $album["year"] ?></p>
                         </div>
                     <?php } ?>
-
                 </div>
             </div>
         </main>

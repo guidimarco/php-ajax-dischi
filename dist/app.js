@@ -154,7 +154,7 @@ function get_genre(album_array) {
 $(document).ready(function () {
   // 1° ajax call
   $.ajax({
-    url: "../jquery/dischi.php",
+    url: "../dischi.php",
     method: "GET",
     data: {
       genre: "all"
@@ -176,7 +176,7 @@ $(document).ready(function () {
   $("#select-genre").on("change", function () {
     // ajax call -- after select-value change
     $.ajax({
-      url: "../jquery/dischi.php",
+      url: "../dischi.php",
       method: "GET",
       data: {
         genre: this.value
