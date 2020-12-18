@@ -7,9 +7,11 @@
 
         <!-- css -->
         <link rel="stylesheet" href="../dist/app.css">
-        
+
         <!-- jquery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- handlebar -->
+        <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
     </head>
     <body>
         <header>
@@ -40,6 +42,16 @@
                 </div>
             </div>
         </main>
+
+        <!-- album-card template -->
+        <script id="album-card-template" type="text/x-handlebars-template">
+            <div class="album-card">
+                <img src="{{ poster }}" alt="{{ title }}">
+                <h2>{{ title }}</h2>
+                <p class="author">{{ author }}</p>
+                <p>{{ year }}</p>
+            </div>
+        </script>
 
         <!-- js -->
         <script src="../dist/app.js" charset="utf-8"></script>

@@ -97,25 +97,30 @@
 var all_genre = []; // array of all-genre
 
 $(document).ready(function () {
+  // handlebar album card
+  var album_card_html = document.getElementById("album-card-template").innerHTML;
+  var album_card_template = Handlebars.compile(album_card_html);
+
+  function print_album_card(album_array) {
+    // get all album-info
+    album_array.forEach(function (album) {
+      // obj-info
+      var album_info = {
+        poster: album.poster,
+        title: album.title,
+        author: album.author,
+        year: album.year
+      };
+      var final_album_html = album_card_template(album_info); // append in container
+
+      $(".album-container").append(final_album_html);
+    });
+  }
+
+  ; // print in the template
   // ajax version
+
   if ($("#jquery-vers").length) {
-    var print_album_card = function print_album_card(album_array) {
-      // get all album-info
-      album_array.forEach(function (album) {
-        // obj-info
-        var album_info = {
-          poster: album.poster,
-          title: album.title,
-          author: album.author,
-          year: album.year
-        };
-        var final_album_html = album_card_template(album_info); // append in container
-
-        $(".album-container").append(final_album_html);
-      });
-    };
-
-    // print in the template
     var print_genre_option = function print_genre_option(genre_array) {
       // get all album-info
       genre_array.forEach(function (genre_value) {
@@ -143,13 +148,9 @@ $(document).ready(function () {
       return genre_array;
     };
 
-    // handlebar album card
-    var album_card_html = document.getElementById("album-card-template").innerHTML;
-    var album_card_template = Handlebars.compile(album_card_html); // handlebar genre option
-
+    // handlebar genre option
     var genre_html = document.getElementById("genre-template").innerHTML;
     var genre_template = Handlebars.compile(genre_html);
-    ;
     ;
     ; // return an array of all genre
   } // 1° ajax call -- only ajax version
@@ -189,11 +190,8 @@ $(document).ready(function () {
       },
       success: function success(dischi) {
         $(".album-container").empty(); // empty the page
-        // ajax-version
 
-        if ($("#jquery-vers").length) {
-          print_album_card(dischi); // print all card
-        }
+        print_album_card(dischi); // print all card
       },
       error: function error() {
         console.log("errore");
