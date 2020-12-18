@@ -7,6 +7,9 @@
 
         <!-- css -->
         <link rel="stylesheet" href="../dist/app.css">
+        
+        <!-- jquery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
     <body>
         <header>
@@ -37,5 +40,8 @@
                 </div>
             </div>
         </main>
+
+        <!-- js -->
+        <script src="../dist/app.js" charset="utf-8"></script>
     </body>
 </html>
