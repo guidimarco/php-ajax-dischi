@@ -1,6 +1,9 @@
 // GLOBAL VAR
 let all_genre = []; // array of all-genre
 
+const Handlebars = require("handlebars");
+const template = Handlebars.compile("Name: {{name}}");
+
 $(document).ready(function() {
     // handlebar album card
     const album_card_html = document.getElementById("album-card-template").innerHTML;
